@@ -10,18 +10,19 @@ procedure Main is
    Ch : Character:='d';
    Available : Boolean:= False;
 begin
+   Put_Line("Welcome to Asparagus Control!");
+   Put_Line("Enter command, press <s> - <start> new loop, <b> - break current loop");
    loop
-      Put_Line("Enter command, press <s> - <start> new loop, <b> - break current loop");
       loop
          Get_Immediate(Ch);
-         exit when Ch = 's';
+         if (Ch = 's') then exit;
+         end if;
+         if (Ch = 'b') then exit;
+            end if;
       end loop;
-
-      Put_Line("!!!!!!!!!!");
       --  Get_Line(Str, Last);
       Put_Line("Enter delay from current rime (minutes)");
       Ret_Val := Sys(To_C("aplay vehicle012.wav"));
-
    end loop;
 end Main;
 
